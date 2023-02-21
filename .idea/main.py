@@ -2,8 +2,8 @@ import requests
 from bs4 import BeatifulSoup
 
 def get_price(url):
-    r = request.get(url)
-    soup = BeautifulSoup(r.text, 'html.parser')
+    r = requests.get(url)
+    soup = BeatifulSoup(r.text, 'html.parser')
     price = soup.find('span',{'itemprop':'price'})['cotent']
     return price
 
